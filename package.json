@@ -1,0 +1,58 @@
+{
+  "name": "@axumquant/mv3-audio-replay-buffer",
+  "version": "0.1.0",
+  "description": "Encrypted, durable audio frame buffer for MV3 service workers. Survives extension restarts, AES-GCM encrypted at rest, ack-trimmed replay-on-reconnect.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "SKILL.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "chrome-extension",
+    "mv3",
+    "audio",
+    "replay-buffer",
+    "indexeddb",
+    "encrypted",
+    "service-worker",
+    "offscreen"
+  ],
+  "author": "axumquant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axumquant/mv3-audio-replay-buffer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/axumquant/mv3-audio-replay-buffer/issues"
+  },
+  "homepage": "https://github.com/axumquant/mv3-audio-replay-buffer#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/dom-webcodecs": "^0.1.11",
+    "@types/node": "^20.11.0",
+    "fake-indexeddb": "^5.0.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}
